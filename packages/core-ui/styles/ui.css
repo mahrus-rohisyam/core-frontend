@@ -1,0 +1,69 @@
+/* Component styles. Import after tokens.css. Class names start with "ui-". */
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+a { color: var(--color-brand); }
+:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+h1, h2, h3 { line-height: 1.25; margin: 0; }
+
+.ui-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  min-height: 2.25rem; padding: 0 var(--space-4);
+  font: inherit; font-size: var(--text-sm); font-weight: 600;
+  border: 1px solid transparent; border-radius: var(--radius); cursor: pointer;
+  background: var(--color-brand); color: var(--color-brand-text);
+}
+.ui-button[data-variant="secondary"] { background: var(--color-surface); color: var(--color-text); border-color: var(--color-border); }
+.ui-button[data-variant="danger"] { background: var(--color-danger); color: var(--color-brand-text); }
+.ui-button[data-variant="ghost"] { background: transparent; color: var(--color-text); }
+.ui-button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.ui-field { display: grid; gap: var(--space-1); }
+.ui-field label { font-size: var(--text-sm); font-weight: 600; }
+.ui-field input, .ui-field select {
+  width: 100%; min-height: 2.25rem; padding: var(--space-2) var(--space-3);
+  font: inherit; color: inherit; background: var(--color-surface);
+  border: 1px solid var(--color-border); border-radius: var(--radius);
+}
+.ui-field [aria-invalid="true"] { border-color: var(--color-danger); }
+.ui-field-hint { font-size: var(--text-sm); color: var(--color-muted); }
+.ui-field-error { font-size: var(--text-sm); color: var(--color-danger); }
+.ui-checkbox { display: flex; gap: var(--space-2); align-items: center; font-size: var(--text-sm); }
+
+.ui-form { display: grid; gap: var(--space-4); }
+.ui-actions { display: flex; gap: var(--space-2); flex-wrap: wrap; align-items: center; }
+
+.ui-alert { padding: var(--space-3) var(--space-4); border-radius: var(--radius); border: 1px solid var(--color-border); background: var(--color-surface); }
+.ui-alert[data-tone="danger"] { border-color: var(--color-danger); color: var(--color-danger); }
+.ui-alert[data-tone="success"] { border-color: var(--color-success); color: var(--color-success); }
+
+.ui-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: var(--space-6); display: grid; gap: var(--space-4); }
+.ui-card > h2 { font-size: var(--text-lg); }
+
+.ui-page-header { display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); margin-bottom: var(--space-6); flex-wrap: wrap; }
+.ui-page-header h1 { font-size: var(--text-xl); }
+.ui-page-header p { margin: var(--space-1) 0 0; color: var(--color-muted); }
+
+.ui-table-wrap { overflow-x: auto; border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-surface); }
+.ui-table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+.ui-table th, .ui-table td { text-align: left; padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--color-border); }
+.ui-table th { color: var(--color-muted); font-weight: 600; }
+.ui-table tr:last-child td { border-bottom: 0; }
+
+.ui-dialog { border: 1px solid var(--color-border); border-radius: var(--radius); padding: var(--space-6); background: var(--color-surface); color: var(--color-text); box-shadow: var(--shadow); width: min(32rem, calc(100vw - 2rem)); }
+.ui-dialog::backdrop { background: rgb(0 0 0 / 0.4); }
+.ui-dialog h2 { font-size: var(--text-lg); margin-bottom: var(--space-4); }
+
+.ui-badge { display: inline-block; padding: 0 var(--space-2); border-radius: 999px; font-size: 0.75rem; font-weight: 600; border: 1px solid var(--color-border); color: var(--color-muted); }
+.ui-empty { padding: var(--space-8); text-align: center; color: var(--color-muted); }
+.ui-spinner { display: inline-block; width: 1rem; height: 1rem; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: ui-spin 0.7s linear infinite; }
+@keyframes ui-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .ui-spinner { animation-duration: 2s; } }
+.ui-mono { font-family: var(--font-mono); font-size: var(--text-sm); word-break: break-all; }
+.ui-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }

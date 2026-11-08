@@ -1,0 +1,30 @@
+{
+  "name": "@mahrus-rohisyam/core-auth",
+  "version": "0.1.0",
+  "description": "Session handling and the sign-in, sign-up, password reset and two-factor screens",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahrus-rohisyam/core-frontend.git",
+    "directory": "packages/core-auth"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "@mahrus-rohisyam/core-api": "0.1.0",
+    "@mahrus-rohisyam/core-ui": "0.1.0"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "@tanstack/react-query": "^5.0.0"
+  }
+}

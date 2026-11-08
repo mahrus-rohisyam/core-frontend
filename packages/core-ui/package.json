@@ -1,0 +1,30 @@
+{
+  "name": "@mahrus-rohisyam/core-ui",
+  "version": "0.1.0",
+  "description": "Design tokens and accessible React components",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahrus-rohisyam/core-frontend.git",
+    "directory": "packages/core-ui"
+  },
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "dist",
+    "styles"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./tokens.css": "./styles/tokens.css",
+    "./styles.css": "./styles/ui.css"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  }
+}

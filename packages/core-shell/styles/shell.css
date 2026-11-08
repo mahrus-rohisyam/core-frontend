@@ -1,0 +1,32 @@
+/* Layout of the app shell. Import after core-ui's tokens.css and styles.css. */
+.shell { display: grid; grid-template-columns: 15rem 1fr; min-height: 100vh; }
+.shell-sidebar {
+  display: flex; flex-direction: column; gap: var(--space-4);
+  padding: var(--space-4); background: var(--color-surface); border-right: 1px solid var(--color-border);
+}
+.shell-brand { font-weight: 700; font-size: var(--text-lg); }
+.shell-sidebar ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-1); }
+.shell-sidebar nav a { display: block; padding: var(--space-1) var(--space-2); border-radius: var(--radius); color: var(--color-text); text-decoration: none; }
+.shell-sidebar nav a:hover { background: var(--color-bg); }
+.shell-sidebar nav a[aria-current="page"] { background: var(--color-bg); font-weight: 600; }
+.shell-nav-heading { margin: var(--space-4) 0 var(--space-1); font-size: var(--text-sm); color: var(--color-muted); }
+.shell-switcher { display: grid; gap: var(--space-2); }
+.shell-switcher select { font: inherit; padding: var(--space-1) var(--space-2); border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-surface); color: inherit; }
+.shell-user { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: var(--space-2); }
+.shell-main { padding: var(--space-6); min-width: 0; }
+.shell-menu-button { display: none; }
+.shell-page { max-width: 64rem; }
+.shell-stack { display: grid; gap: var(--space-6); }
+.shell-centered { max-width: 26rem; margin: 10vh auto; padding: 0 var(--space-4); display: grid; gap: var(--space-4); }
+.shell-links { display: flex; justify-content: space-between; gap: var(--space-4); font-size: var(--text-sm); margin: 0; }
+.shell-codes { columns: 2; font-size: var(--text-sm); }
+.shell-fieldset { border: 1px solid var(--color-border); border-radius: var(--radius); padding: var(--space-3); display: grid; gap: var(--space-2); }
+.shell-fieldset legend { font-size: var(--text-sm); font-weight: 600; padding: 0 var(--space-1); }
+
+@media (max-width: 48rem) {
+  .shell { grid-template-columns: 1fr; }
+  .shell-sidebar { display: none; }
+  .shell[data-menu-open] .shell-sidebar { display: flex; }
+  .shell-menu-button { display: inline-block; margin-bottom: var(--space-4); }
+  .shell-main { padding: var(--space-4); }
+}

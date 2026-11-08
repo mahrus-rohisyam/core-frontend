@@ -1,0 +1,25 @@
+{
+  "name": "@mahrus-rohisyam/core-api",
+  "version": "0.1.0",
+  "description": "Typed API client for core-backend, with problem+json errors and CSRF",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahrus-rohisyam/core-frontend.git",
+    "directory": "packages/core-api"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "openapi-fetch": "0.17.0"
+  }
+}

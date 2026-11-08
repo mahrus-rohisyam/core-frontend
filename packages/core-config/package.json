@@ -1,0 +1,9 @@
+{
+  "name": "@mahrus-rohisyam/core-config",
+  "version": "0.1.0",
+  "description": "Shared TypeScript settings for apps built on core-frontend",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/mahrus-rohisyam/core-frontend.git", "directory": "packages/core-config" },
+  "files": ["tsconfig.base.json"],
+  "exports": { "./tsconfig.base.json": "./tsconfig.base.json" }
+}

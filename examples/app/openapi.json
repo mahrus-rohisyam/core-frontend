@@ -1,0 +1,30 @@
+{
+  "openapi": "3.1.0",
+  "info": { "title": "notes example", "version": "0.1.0" },
+  "paths": {
+    "/api/v1/orgs/{org}/notes": {
+      "parameters": [{ "name": "org", "in": "path", "required": true, "schema": { "type": "string" } }],
+      "get": {
+        "responses": { "200": { "description": "OK", "content": { "application/json": { "schema": {
+          "type": "object", "required": ["items"], "properties": { "items": { "type": "array", "items": { "$ref": "#/components/schemas/Note" } } } } } } } }
+      },
+      "post": {
+        "requestBody": { "required": true, "content": { "application/json": { "schema": {
+          "type": "object", "required": ["title"], "additionalProperties": false,
+          "properties": { "title": { "type": "string" }, "body": { "type": "string" } } } } } },
+        "responses": { "201": { "description": "Created", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Note" } } } } }
+      }
+    },
+    "/api/v1/orgs/{org}/notes/{id}": {
+      "parameters": [
+        { "name": "org", "in": "path", "required": true, "schema": { "type": "string" } },
+        { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+      ],
+      "delete": { "responses": { "204": { "description": "Deleted" } } }
+    }
+  },
+  "components": { "schemas": { "Note": {
+    "type": "object", "required": ["id", "title", "body", "author_id", "created_at"],
+    "properties": { "id": { "type": "string" }, "title": { "type": "string" }, "body": { "type": "string" },
+      "author_id": { "type": "string" }, "created_at": { "type": "string", "format": "date-time" } } } } }
+}
